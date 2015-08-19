@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ot9-jX-cCS">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Add New Reminder-->
+        <scene sceneID="Fwn-0v-MxR">
+            <objects>
+                <tableViewController title="Add New Reminder" id="bJU-Eq-zuN" customClass="ContactListTableViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sR1-Qv-VTh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="Who is this for?" id="dKJ-z1-B42">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="bJU-Eq-zuN" id="g7J-Jf-zlk"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="78m-ff-NOd">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="78m-ff-NOd" id="8mN-0F-Nuw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="rhK-jF-Hqa" kind="push" id="mot-6S-jo8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bJU-Eq-zuN" id="YC9-2L-fkd"/>
+                            <outlet property="delegate" destination="bJU-Eq-zuN" id="1Kq-es-sBM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add New Reminder               " id="uN7-5A-iUu">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="C9x-pg-ZVd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4zo-tH-CW2">
+                                <rect key="frame" x="264" y="7" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="new group">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oVP-WT-OSt" kind="push" id="ZCQ-iB-f43"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="FXe-uM-nqJ" id="FnJ-4i-26c"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGN-aV-Ewg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="HTU-x9-owm">
+                    <connections>
+                        <outlet property="delegate" destination="bJU-Eq-zuN" id="bjV-cl-c0j"/>
+                        <outlet property="searchBar" destination="dKJ-z1-B42" id="uv9-9g-dFZ"/>
+                        <outlet property="searchContentsController" destination="bJU-Eq-zuN" id="ror-na-UTd"/>
+                        <outlet property="searchResultsDataSource" destination="bJU-Eq-zuN" id="41D-Xp-Sxc"/>
+                        <outlet property="searchResultsDelegate" destination="bJU-Eq-zuN" id="v5y-re-sax"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="FXe-uM-nqJ">
+                    <connections>
+                        <outlet property="delegate" destination="bJU-Eq-zuN" id="lU3-U5-4Xz"/>
+                        <outlet property="searchContentsController" destination="bJU-Eq-zuN" id="SQy-oo-uWr"/>
+                        <outlet property="searchResultsDataSource" destination="bJU-Eq-zuN" id="5XO-LW-Es2"/>
+                        <outlet property="searchResultsDelegate" destination="bJU-Eq-zuN" id="BZ3-nW-jD2"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-6334" y="-2864"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="iZD-ra-MwG">
+            <objects>
+                <navigationController id="Ot9-jX-cCS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contacts" id="7bD-fG-FgO"/>
+                    <navigationItem key="navigationItem" id="Qjp-Hz-wSb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ccl-gw-RGD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="M7q-sU-d0Z" kind="relationship" relationship="rootViewController" id="ATQ-8O-Ycv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uV9-kc-Bg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7515" y="-2864"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="7se-bj-dLh">
+            <objects>
+                <viewController id="M7q-sU-d0Z" customClass="MainMenuViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="py6-Zd-DbJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xrC-0Y-GIZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LPD-K2-YZF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyQ-gl-q53">
+                                <rect key="frame" x="0.0" y="110" width="162" height="50.5"/>
+                                <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="For Me">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button:" destination="M7q-sU-d0Z" eventType="touchUpInside" id="y7v-HH-C8H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCW-90-IKM">
+                                <rect key="frame" x="163" y="110" width="157" height="50.5"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="For Friends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button:" destination="M7q-sU-d0Z" eventType="touchUpInside" id="NyJ-qP-jQT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtF-3j-zD9">
+                                <rect key="frame" x="274" y="72" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bJU-Eq-zuN" kind="push" id="qsA-s4-wXn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c0-yT-ogu">
+                                <rect key="frame" x="16" y="72" width="37" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="≡">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-JT-GXY">
+                                <rect key="frame" x="0.0" y="162" width="320" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseidentifier2" rowHeight="37" id="PSK-wk-equ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PSK-wk-equ" id="Jpl-eE-G9H">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="98" id="2K2-sd-RUJ" customClass="ReminderTableViewCell" customModule="ParseStarterProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2K2-sd-RUJ" id="JaK-x2-Lj8">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ocI-a3-5Ul">
+                                                    <rect key="frame" x="8" y="8" width="70" height="65.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reminder Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U33-s1-Ake">
+                                                    <rect key="frame" x="95" y="45" width="217" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6x-m5-PXb">
+                                                    <rect key="frame" x="9" y="77" width="69" height="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuh-KS-whF">
+                                                    <rect key="frame" x="195" y="21" width="117" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="reminderDetailsLabel" destination="U33-s1-Ake" id="Q4P-fI-XyE"/>
+                                            <outlet property="reminderDueTimeLabel" destination="yuh-KS-whF" id="k6L-KK-DPi"/>
+                                            <outlet property="reminderImageView" destination="JaK-x2-Lj8" id="3ht-HC-kDC"/>
+                                            <outlet property="reminderNameLabel" destination="P6x-m5-PXb" id="WO9-s7-RFz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M7q-sU-d0Z" id="D5g-sP-qHi"/>
+                                    <outlet property="delegate" destination="M7q-sU-d0Z" id="KRb-7p-Jxf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BZR-p5-G2i"/>
+                    <connections>
+                        <outlet property="tableView" destination="TN2-JT-GXY" id="0ei-4u-Hsd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ua2-XY-oIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6692" y="-2864"/>
+        </scene>
+        <!--Add New Reminder-->
+        <scene sceneID="sCm-7m-8hT">
+            <objects>
+                <viewController id="rhK-jF-Hqa" customClass="AddNewReminderViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rqZ-bz-snL"/>
+                        <viewControllerLayoutGuide type="bottom" id="5F4-2c-ffg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Wh-6C-fa6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    When is it due?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMz-WB-h7m">
+                                <rect key="frame" x="0.0" y="207" width="320" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6t-c0-wx8">
+                                <rect key="frame" x="0.0" y="506" width="320" height="62"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Schedule It!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scheduleReminderButton:" destination="rhK-jF-Hqa" eventType="touchUpInside" id="MiR-RT-5f1"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type you reminder text here." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJq-D1-ULe">
+                                <rect key="frame" x="16" y="132" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ugq-87-veZ">
+                                <rect key="frame" x="0.0" y="250" width="320" height="101"/>
+                                <date key="date" timeIntervalSinceReferenceDate="461496956.36073399">
+                                    <!--2015-08-17 09:35:56 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Reminder" id="w4g-K7-VCh"/>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="Ugq-87-veZ" id="Rgg-kG-wcg"/>
+                        <outlet property="reminderText" destination="zJq-D1-ULe" id="Nuu-JA-g3C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c43-Tc-g5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6017" y="-2087"/>
+        </scene>
+        <!--Add New Reminder -->
+        <scene sceneID="eGI-ZD-G1m">
+            <objects>
+                <tableViewController id="oVP-WT-OSt" customClass="ContactListGroupTableViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a0C-oW-sbS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="Who is this for?" id="xkN-tA-G9f">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="oVP-WT-OSt" id="MdG-KK-kz4"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseidentifier" id="FKI-dZ-4Ie">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKI-dZ-4Ie" id="V5Q-gl-7Ec">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oVP-WT-OSt" id="IBz-eJ-M57"/>
+                            <outlet property="delegate" destination="oVP-WT-OSt" id="6yX-jL-f4D"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add New Reminder " id="s8M-pP-1Wz">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="AUf-Pa-75o">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D5A-wT-KcM">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rhK-jF-Hqa" kind="push" id="YG8-X6-M80"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="cAP-s5-tID" id="YSm-2P-X0x"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dI-52-Fk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="cAP-s5-tID">
+                    <connections>
+                        <outlet property="delegate" destination="oVP-WT-OSt" id="SGE-CA-00d"/>
+                        <outlet property="searchBar" destination="xkN-tA-G9f" id="D3e-Ky-scl"/>
+                        <outlet property="searchContentsController" destination="oVP-WT-OSt" id="jqP-9h-C5H"/>
+                        <outlet property="searchResultsDataSource" destination="oVP-WT-OSt" id="HJp-nr-FVu"/>
+                        <outlet property="searchResultsDelegate" destination="oVP-WT-OSt" id="d5h-Xm-0AF"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-5818" y="-2864"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="mot-6S-jo8"/>
+    </inferredMetricsTieBreakers>
+</document>
