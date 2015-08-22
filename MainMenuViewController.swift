@@ -22,40 +22,16 @@ class MainMenuViewController: UIViewController, UITableViewDataSource  {
     var allDates:NSMutableArray = []
     var isForMe = true
     var parseIdentifierArray:NSMutableArray = NSMutableArray()
-    var senderIdentifier = ""
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var query = PFQuery(className: "Person")
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if (error == nil) {
-                if let objects = objects as? [PFObject] {
-                    for person in objects {
-                        self.parseIdentifierArray.addObject(person["identifier"] as! (String))
-                    }
-                }
-                
-                if let isloggedinObject = NSUserDefaults.standardUserDefaults().objectForKey("kLoggedInUserIdentifier") {
-                    if self.parseIdentifierArray.containsObject(isloggedinObject) {
-                        self.senderIdentifier = isloggedinObject as! String
-                        
-                        //NSUserDefaults.standardUserDefaults().setObject(userID.text, forKey: "kLoggedInUserIdentifier")
-                        //  LOGOUT      NSUserDefaults.standardUserDefaults().removeObjectForKey("kLoggedInUserIdentifier")
-                        self.performSegueWithIdentifier("goToMainMenuViewController", sender: self)
-                    }
-                    
-                } else {
-                    
-                }
-                
-                
-            }
-            
-            
+        
+        
+        let isloggedinObject: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("kLoggedInUserIdentifier")
+        if (isloggedinObject == nil) {
+            self.performSegueWithIdentifier("SignupNavSegue", sender: self)
         }
+    
         
         //        query.whereKey("identifier", containsAllObjectsInArray: ["+85212345678"])
         
@@ -107,6 +83,7 @@ class MainMenuViewController: UIViewController, UITableViewDataSource  {
 
     @IBAction func logOutButton(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().removeObjectForKey("kLoggedInUserIdentifier")
+        self.performSegueWithIdentifier("signOutSegue", sender: self)
     }
     
     

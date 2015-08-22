@@ -20,11 +20,6 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
     var filteredContact = [ABRecordRef]()
     var addresBookIdentifierArray: NSMutableArray = NSMutableArray()
     
- 
-    
-    
-
-    
     
   /*  func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
@@ -62,6 +57,7 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
                 }
             }
         }
+        test()
     }
     
     func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {

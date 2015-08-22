@@ -119,8 +119,10 @@ class createNewUserViewController: UIViewController {
             alert.show()
 
             
+            NSUserDefaults.standardUserDefaults().setObject(phoneNumber.text, forKey: "kLoggedInUserIdentifier")
             
-        self.performSegueWithIdentifier("signUpSuccess", sender: self)
+            self.dismissViewControllerAnimated(true, completion: {})
+            //self.performSegueWithIdentifier("signUpSuccess", sender: self)
         }
         
         else {

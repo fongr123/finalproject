@@ -96,22 +96,18 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
-        if ((error) != nil)
-        {
+        if ((error) != nil) {
             // Process error
-        }
-        else if result.isCancelled {
+        } else if result.isCancelled {
             // Handle cancellations
-        }
-        else {
+        } else {
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
+            if result.grantedPermissions.contains("email") {
                 
             }
         }
-NSUserDefaults.standardUserDefaults().objectForKey("kLoggedInUserIdentifier")
+        NSUserDefaults.standardUserDefaults().objectForKey("kLoggedInUserIdentifier")
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
@@ -150,28 +146,26 @@ NSUserDefaults.standardUserDefaults().objectForKey("kLoggedInUserIdentifier")
     
     @IBAction func SignInbutton(sender: AnyObject) {
         
-       if parseIdentifierArray.containsObject(userID.text) {
-        senderIdentifier = userID.text
-        NSUserDefaults.standardUserDefaults().setObject(userID.text, forKey: "kLoggedInUserIdentifier")
-//        NSUserDefaults.standardUserDefaults().removeObjectForKey("kLoggedInUserIdentifier")
-        self.performSegueWithIdentifier("goToMainMenuViewController", sender: self)
-        }
+        if parseIdentifierArray.containsObject(userID.text) {
+            senderIdentifier = userID.text
+            NSUserDefaults.standardUserDefaults().setObject(userID.text, forKey: "kLoggedInUserIdentifier")
             
-       else{
-        
-        var alert = UIAlertView()
-        alert.title = "Error"
-        alert.message = "User ID incorrect"
-        alert.addButtonWithTitle("Retry")
-        alert.show()
+            
+            
+            //NSUserDefaults.standardUserDefaults().removeObjectForKey("kLoggedInUserIdentifier")
+            //self.performSegueWithIdentifier("goToMainMenuViewController", sender: self)
+            
+            
+            self.dismissViewControllerAnimated(true, completion: {})
+        } else {
+            var alert = UIAlertView()
+            alert.title = "Error"
+            alert.message = "User ID incorrect"
+            alert.addButtonWithTitle("Retry")
+            alert.show()
 
         }
-        
-        
-        
-    
-        
-        }
+    }
         
 
     
