@@ -10,6 +10,8 @@ import Parse
 
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+    var parseIdentifierArray:NSMutableArray = NSMutableArray()
+    var senderIdentifier = ""
     
     
    
@@ -19,10 +21,21 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var query = PFQuery(className: "Person")
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if (error == nil) {
+                if let objects = objects as? [PFObject] {
+                    for person in objects {
+                        self.parseIdentifierArray.addObject(person["identifier"] as! (String))
+                    }
+                }
+                
+                
+            }
+        }
+            
+            
         
-               
-    
-
         
         
         

@@ -21,16 +21,15 @@ class MainMenuViewController: UIViewController, UITableViewDataSource  {
     var friendsReminderList: NSMutableArray = []
     var allDates:NSMutableArray = []
     var isForMe = true
-    var parseIdentifierArray:NSMutableArray = NSMutableArray()    
-    
+    var parseIdentifierArray:NSMutableArray = NSMutableArray()
     var senderIdentifier = ""
-
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                var query = PFQuery(className: "Person")
-        //        query.whereKey("identifier", containsAllObjectsInArray: ["+85212345678"])
+
+        var query = PFQuery(className: "Person")
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if (error == nil) {
                 if let objects = objects as? [PFObject] {
@@ -51,9 +50,15 @@ class MainMenuViewController: UIViewController, UITableViewDataSource  {
                 } else {
                     
                 }
-
+                
                 
             }
+            
+            
+        }
+        
+        //        query.whereKey("identifier", containsAllObjectsInArray: ["+85212345678"])
+        
 
         
        
