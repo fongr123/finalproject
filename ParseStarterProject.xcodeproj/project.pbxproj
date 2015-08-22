@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* ViewController.swift */; };
-		81BA81501A49DA1800E65899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA814E1A49DA1800E65899 /* Main.storyboard */; };
 		81BA81521A49DA1800E65899 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81BA81511A49DA1800E65899 /* Images.xcassets */; };
 		81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816B1A49DB6800E65899 /* Bolts.framework */; };
 		81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816C1A49DB6800E65899 /* Parse.framework */; };
@@ -20,14 +19,16 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		81BA81811A49E10C00E65899 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81801A49E10C00E65899 /* ParseUI.framework */; };
+		E613E5E31B86D01900F970B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E613E5DF1B86D01900F970B4 /* FBSDKCoreKit.framework */; };
+		E613E5E41B86D01900F970B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E613E5E01B86D01900F970B4 /* FBSDKLoginKit.framework */; };
+		E613E5E51B86D01900F970B4 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E613E5E11B86D01900F970B4 /* FBSDKMessengerShareKit.framework */; };
+		E613E5E61B86D01900F970B4 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E613E5E21B86D01900F970B4 /* FBSDKShareKit.framework */; };
+		E613E5E81B86D0F800F970B4 /* createNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E613E5E71B86D0F800F970B4 /* createNewUserViewController.swift */; };
+		E613E5EB1B86DD4A00F970B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E613E5E91B86DD4A00F970B4 /* Main.storyboard */; };
 		E6AE96271B849BB300967734 /* ContactListGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE96261B849BB300967734 /* ContactListGroupTableViewController.swift */; };
 		E6B919831B7EE2240008E114 /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B919821B7EE2240008E114 /* ContactListTableViewController.swift */; };
 		E6B919851B7EE2360008E114 /* RemindListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B919841B7EE2360008E114 /* RemindListTableViewController.swift */; };
 		E6B919871B7EE2480008E114 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B919861B7EE2480008E114 /* ToDoListTableViewController.swift */; };
-		E6B9198E1B7EE75D0008E114 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B9198A1B7EE75D0008E114 /* FBSDKCoreKit.framework */; };
-		E6B9198F1B7EE75D0008E114 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B9198B1B7EE75D0008E114 /* FBSDKLoginKit.framework */; };
-		E6B919901B7EE75D0008E114 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B9198C1B7EE75D0008E114 /* FBSDKMessengerShareKit.framework */; };
-		E6B919911B7EE75D0008E114 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B9198D1B7EE75D0008E114 /* FBSDKShareKit.framework */; };
 		E6B919971B81D50A0008E114 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B919961B81D50A0008E114 /* MainMenuViewController.swift */; };
 		E6B919991B81E0DF0008E114 /* AddNewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B919981B81E0DF0008E114 /* AddNewReminderViewController.swift */; };
 		E6B9199B1B81FFAA0008E114 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B9199A1B81FFAA0008E114 /* Reminder.swift */; };
@@ -44,7 +45,6 @@
 		81BA81491A49DA1800E65899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81BA814C1A49DA1800E65899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		81BA814F1A49DA1800E65899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81BA81511A49DA1800E65899 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		81BA816B1A49DB6800E65899 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		81BA816C1A49DB6800E65899 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -56,14 +56,16 @@
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		81BA81821A49E27F00E65899 /* ParseStarterProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ParseStarterProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		E613E5DF1B86D01900F970B4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E613E5E01B86D01900F970B4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E613E5E11B86D01900F970B4 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		E613E5E21B86D01900F970B4 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		E613E5E71B86D0F800F970B4 /* createNewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createNewUserViewController.swift; sourceTree = "<group>"; };
+		E613E5EA1B86DD4A00F970B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6AE96261B849BB300967734 /* ContactListGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListGroupTableViewController.swift; sourceTree = "<group>"; };
 		E6B919821B7EE2240008E114 /* ContactListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTableViewController.swift; sourceTree = "<group>"; };
 		E6B919841B7EE2360008E114 /* RemindListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindListTableViewController.swift; sourceTree = "<group>"; };
 		E6B919861B7EE2480008E114 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
-		E6B9198A1B7EE75D0008E114 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../FacebookSDKs-iOS-20150813/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		E6B9198B1B7EE75D0008E114 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../FacebookSDKs-iOS-20150813/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		E6B9198C1B7EE75D0008E114 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = "../../FacebookSDKs-iOS-20150813/FBSDKMessengerShareKit.framework"; sourceTree = "<group>"; };
-		E6B9198D1B7EE75D0008E114 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../FacebookSDKs-iOS-20150813/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		E6B919961B81D50A0008E114 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenuViewController.swift; path = ../MainMenuViewController.swift; sourceTree = "<group>"; };
 		E6B919981B81E0DF0008E114 /* AddNewReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewReminderViewController.swift; sourceTree = "<group>"; };
 		E6B9199A1B81FFAA0008E114 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		E6B919A41B821B030008E114 /* MGSwipeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = MGSwipeTableCell/MGSwipeButton.m; sourceTree = "<group>"; };
 		E6B919A51B821B030008E114 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = MGSwipeTableCell/MGSwipeTableCell.h; sourceTree = "<group>"; };
 		E6B919A61B821B030008E114 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = MGSwipeTableCell/MGSwipeTableCell.m; sourceTree = "<group>"; };
+		E6DD1DD31B857C250060E027 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,15 +85,15 @@
 			files = (
 				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
 				81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */,
+				E613E5E61B86D01900F970B4 /* FBSDKShareKit.framework in Frameworks */,
+				E613E5E41B86D01900F970B4 /* FBSDKLoginKit.framework in Frameworks */,
 				81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */,
+				E613E5E51B86D01900F970B4 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */,
-				E6B919911B7EE75D0008E114 /* FBSDKShareKit.framework in Frameworks */,
-				E6B919901B7EE75D0008E114 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */,
-				E6B9198E1B7EE75D0008E114 /* FBSDKCoreKit.framework in Frameworks */,
 				81BA81721A49DB6800E65899 /* ParseCrashReporting.framework in Frameworks */,
 				81BA81731A49DB6800E65899 /* ParseFacebookUtils.framework in Frameworks */,
-				E6B9198F1B7EE75D0008E114 /* FBSDKLoginKit.framework in Frameworks */,
+				E613E5E31B86D01900F970B4 /* FBSDKCoreKit.framework in Frameworks */,
 				81BA81811A49E10C00E65899 /* ParseUI.framework in Frameworks */,
 				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
 			);
@@ -124,9 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				E6B919961B81D50A0008E114 /* MainMenuViewController.swift */,
+				E613E5E91B86DD4A00F970B4 /* Main.storyboard */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
-				81BA814E1A49DA1800E65899 /* Main.storyboard */,
+				E613E5E71B86D0F800F970B4 /* createNewUserViewController.swift */,
 				E6AE96261B849BB300967734 /* ContactListGroupTableViewController.swift */,
 				E6B919981B81E0DF0008E114 /* AddNewReminderViewController.swift */,
 				E6B919821B7EE2240008E114 /* ContactListTableViewController.swift */,
@@ -146,6 +150,7 @@
 			children = (
 				81BA81491A49DA1800E65899 /* Info.plist */,
 				81BA81821A49E27F00E65899 /* ParseStarterProject-Bridging-Header.h */,
+				E6DD1DD31B857C250060E027 /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,10 +158,10 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E6B9198A1B7EE75D0008E114 /* FBSDKCoreKit.framework */,
-				E6B9198B1B7EE75D0008E114 /* FBSDKLoginKit.framework */,
-				E6B9198C1B7EE75D0008E114 /* FBSDKMessengerShareKit.framework */,
-				E6B9198D1B7EE75D0008E114 /* FBSDKShareKit.framework */,
+				E613E5DF1B86D01900F970B4 /* FBSDKCoreKit.framework */,
+				E613E5E01B86D01900F970B4 /* FBSDKLoginKit.framework */,
+				E613E5E11B86D01900F970B4 /* FBSDKMessengerShareKit.framework */,
+				E613E5E21B86D01900F970B4 /* FBSDKShareKit.framework */,
 				81BA816B1A49DB6800E65899 /* Bolts.framework */,
 				81BA816C1A49DB6800E65899 /* Parse.framework */,
 				81BA816D1A49DB6800E65899 /* ParseCrashReporting.framework */,
@@ -236,8 +241,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81BA81501A49DA1800E65899 /* Main.storyboard in Resources */,
 				81BA81521A49DA1800E65899 /* Images.xcassets in Resources */,
+				E613E5EB1B86DD4A00F970B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +277,7 @@
 				E6B919A81B821B030008E114 /* MGSwipeButton.m in Sources */,
 				E6B919A91B821B030008E114 /* MGSwipeTableCell.h in Sources */,
 				E6B919AA1B821B030008E114 /* MGSwipeTableCell.m in Sources */,
+				E613E5E81B86D0F800F970B4 /* createNewUserViewController.swift in Sources */,
 				E6AE96271B849BB300967734 /* ContactListGroupTableViewController.swift in Sources */,
 				E6B919871B7EE2480008E114 /* ToDoListTableViewController.swift in Sources */,
 				E6B919991B81E0DF0008E114 /* AddNewReminderViewController.swift in Sources */,
@@ -286,10 +292,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		81BA814E1A49DA1800E65899 /* Main.storyboard */ = {
+		E613E5E91B86DD4A00F970B4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				81BA814F1A49DA1800E65899 /* Base */,
+				E613E5EA1B86DD4A00F970B4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

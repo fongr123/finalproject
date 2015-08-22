@@ -10,7 +10,8 @@ import UIKit
 import AddressBook
 import Parse
 
-class MainMenuViewController: UIViewController, UITableViewDataSource {
+
+class MainMenuViewController: UIViewController, UITableViewDataSource  {
 
     @IBOutlet weak var tableView: UITableView!
     var contactList: NSArray = []
@@ -18,12 +19,54 @@ class MainMenuViewController: UIViewController, UITableViewDataSource {
     var reminder: PFObject = PFObject(className: "")
     var reminderList: NSMutableArray = []
     var friendsReminderList: NSMutableArray = []
+    var allDates:NSMutableArray = []
     var isForMe = true
+    var parseIdentifierArray:NSMutableArray = NSMutableArray()    
+    
+    var senderIdentifier = ""
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+                var query = PFQuery(className: "Person")
+        //        query.whereKey("identifier", containsAllObjectsInArray: ["+85212345678"])
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if (error == nil) {
+                if let objects = objects as? [PFObject] {
+                    for person in objects {
+                        self.parseIdentifierArray.addObject(person["identifier"] as! (String))
+                    }
+                }
+                
+                if let isloggedinObject = NSUserDefaults.standardUserDefaults().objectForKey("kLoggedInUserIdentifier") {
+                    if self.parseIdentifierArray.containsObject(isloggedinObject) {
+                        self.senderIdentifier = isloggedinObject as! String
+                        
+                        //NSUserDefaults.standardUserDefaults().setObject(userID.text, forKey: "kLoggedInUserIdentifier")
+                        //  LOGOUT      NSUserDefaults.standardUserDefaults().removeObjectForKey("kLoggedInUserIdentifier")
+                        self.performSegueWithIdentifier("goToMainMenuViewController", sender: self)
+                    }
+                    
+                } else {
+                    
+                }
 
-        self.getContactNames()
+                
+            }
+
+        
+       
+
+      /*  self.getContactNames()
+        imageURL.contentMode = UIViewContentMode.ScaleAspectFit
+        if let checkedUrl = NSURL(string: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png") {
+            downloadImage(checkedUrl)
+        }
+        println("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
+        */
+        
+        
 
 //        var thirdReminder:Reminder = Reminder();
 //        thirdReminder.text = "Reminder 101"
@@ -31,11 +74,38 @@ class MainMenuViewController: UIViewController, UITableViewDataSource {
 //        thirdReminder.fromWho = 0
 //        
 //        friendsReminderList.addObject(thirdReminder);
-        
-        
-        
-
     }
+    
+    
+    //Get Profile Pic
+    
+  /*  func getDataFromUrl(urL:NSURL, completion: ((data: NSData?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(urL) { (data, response, error) in
+            completion(data: data)
+            }.resume()
+    }
+    
+    func downloadImage(url:NSURL){
+        println("Started downloading \"\(url.lastPathComponent!.stringByDeletingPathExtension)\".")
+        getDataFromUrl(url) { data in
+            dispatch_async(dispatch_get_main_queue()) {
+                println("Finished downloading \"\(url.lastPathComponent!.stringByDeletingPathExtension)\".")
+                imageURL.image = UIImage(data: data!)
+            }
+        }
+    
+    }
+    
+    */
+    
+
+
+    @IBAction func logOutButton(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("kLoggedInUserIdentifier")
+    }
+    
+    
+    
     
     override func viewDidAppear(animated: Bool) {
         var query = PFQuery(className: "Reminder")
@@ -48,11 +118,25 @@ class MainMenuViewController: UIViewController, UITableViewDataSource {
                 
                 if let objects = objects as? [PFObject] {
                     self.reminderList.addObjectsFromArray(objects)
+                    
                 }
+                for reminder in self.reminderList {
+                    let reminderDate: AnyObject? = reminder.objectForKey("dueAt")
+                    if (!self.allDates.containsObject(reminderDate!)) {
+                        self.allDates.addObject(reminderDate!)
+                    }
+                }
+
             }
             self.tableView.reloadData()
         }
     }
+    
+    
+   
+ 
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -165,8 +249,29 @@ class MainMenuViewController: UIViewController, UITableViewDataSource {
             
             cell.leftSwipeSettings.transition = MGSwipeTransition.Border
             
+        
+    
+            // Remindertext
             if let text = reminderList[indexPath.row]["text"] as? String {
-                cell.textLabel?.text = text
+                cell.reminderDetailsLabel.adjustsFontSizeToFitWidth = true
+                cell.reminderDetailsLabel.font = UIFont.systemFontOfSize(12.0)
+                cell.reminderDetailsLabel.numberOfLines = 3
+                cell.reminderDetailsLabel.text = text
+               
+            }
+            
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "EE, h:mma " + "d, MMM"
+            //formatter.dateStyle = NSDateFormatterStyle.LongStyle
+            //formatter.timeStyle = .MediumStyle
+            
+            
+            if let time = reminderList[indexPath.row]["dueAt"] as? NSDate {
+                cell.reminderDueTimeLabel.adjustsFontSizeToFitWidth = true
+                cell.reminderDueTimeLabel.font = UIFont.systemFontOfSize(12.0)
+                cell.reminderDueTimeLabel.numberOfLines = 2
+                cell.reminderDueTimeLabel.text = formatter.stringFromDate(time)
+                
             }
 
             return cell
@@ -199,6 +304,15 @@ class MainMenuViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 98;
     }
+    
+    /*func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm" //format style. Browse online to get a format that fits your needs.
+        var dateString = dateFormatter.stringFromDate(self.allDates[section] as! NSDate);
+
+        return dateString
+    }
+*/
 
 
 }

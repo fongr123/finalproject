@@ -9,8 +9,10 @@
 
 // If you are using Facebook, uncomment this line to get automatic import of the header inside your project.
 //#import <ParseFacebookUtils/PFFacebookUtils.h>
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "MGSwipeTableCell.h"
 #import "MGSwipeButton.h"
+
 
 #endif

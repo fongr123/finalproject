@@ -9,14 +9,22 @@
 import UIKit
 import AddressBook
 import AddressBookUI
+import Parse
 
 class ContactListTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
     var addressBook: ABAddressBookRef?
     var contactList: NSArray = []
-    
+    var parseIdentifierArray:NSMutableArray = NSMutableArray()
     var filteredContact = [ABRecordRef]()
+    var addresBookIdentifierArray: NSMutableArray = NSMutableArray()
+    
+ 
+    
+    
+
+    
     
   /*  func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
@@ -42,14 +50,18 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        test()
         
+        var query = PFQuery(className: "Person")
+//        query.whereKey("identifier", containsAllObjectsInArray: ["+85212345678"])
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if (error == nil) {
+                    if let objects = objects as? [PFObject] {
+                    for person in objects {
+                        self.parseIdentifierArray.addObject(person["identifier"]!)
+                    }
+                }
+            }
+        }
     }
     
     func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
@@ -107,6 +119,12 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
             for phone in allPhoneIDs {
                 let phoneID = phone as! String
                 println ("contactPhone : \(phoneID) :=>")
+                var newPhoneID = phoneID.stringByReplacingOccurrencesOfString("(", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
+                    newPhoneID = newPhoneID.stringByReplacingOccurrencesOfString(")", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
+                    newPhoneID = newPhoneID.stringByReplacingOccurrencesOfString(" ", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
+                    newPhoneID = newPhoneID.stringByReplacingOccurrencesOfString("-", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
+                    self.addresBookIdentifierArray.addObject(newPhoneID)
+                println ("contactPhone : \(newPhoneID) :=>")
             }
         }
     }
