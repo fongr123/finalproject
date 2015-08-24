@@ -25,6 +25,18 @@
 		E613E5E61B86D01900F970B4 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E613E5E21B86D01900F970B4 /* FBSDKShareKit.framework */; };
 		E613E5E81B86D0F800F970B4 /* createNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E613E5E71B86D0F800F970B4 /* createNewUserViewController.swift */; };
 		E613E5EB1B86DD4A00F970B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E613E5E91B86DD4A00F970B4 /* Main.storyboard */; };
+		E64155E91B88C097005550AF /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64155E81B88C097005550AF /* ContactListTableViewCell.swift */; };
+		E64155EB1B88D517005550AF /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64155EA1B88D517005550AF /* MeTableViewCell.swift */; };
+		E64156251B8AFF29005550AF /* apple-icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = E641561C1B8AFF29005550AF /* apple-icon-57x57.png */; };
+		E64156261B8AFF29005550AF /* apple-icon-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = E641561D1B8AFF29005550AF /* apple-icon-60x60.png */; };
+		E64156271B8AFF29005550AF /* apple-icon-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = E641561E1B8AFF29005550AF /* apple-icon-72x72.png */; };
+		E64156281B8AFF29005550AF /* apple-icon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = E641561F1B8AFF29005550AF /* apple-icon-76x76.png */; };
+		E64156291B8AFF29005550AF /* apple-icon-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = E64156201B8AFF29005550AF /* apple-icon-114x114.png */; };
+		E641562A1B8AFF29005550AF /* apple-icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = E64156211B8AFF29005550AF /* apple-icon-120x120.png */; };
+		E641562B1B8AFF29005550AF /* apple-icon-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = E64156221B8AFF29005550AF /* apple-icon-144x144.png */; };
+		E641562C1B8AFF29005550AF /* apple-icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = E64156231B8AFF29005550AF /* apple-icon-152x152.png */; };
+		E641562D1B8AFF29005550AF /* apple-icon-180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = E64156241B8AFF29005550AF /* apple-icon-180x180.png */; };
+		E641562F1B8B09DB005550AF /* createNewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641562E1B8B09DB005550AF /* createNewContactViewController.swift */; };
 		E6AE96271B849BB300967734 /* ContactListGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE96261B849BB300967734 /* ContactListGroupTableViewController.swift */; };
 		E6B919831B7EE2240008E114 /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B919821B7EE2240008E114 /* ContactListTableViewController.swift */; };
 		E6B919851B7EE2360008E114 /* RemindListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B919841B7EE2360008E114 /* RemindListTableViewController.swift */; };
@@ -62,6 +74,18 @@
 		E613E5E21B86D01900F970B4 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E613E5E71B86D0F800F970B4 /* createNewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createNewUserViewController.swift; sourceTree = "<group>"; };
 		E613E5EA1B86DD4A00F970B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E64155E81B88C097005550AF /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
+		E64155EA1B88D517005550AF /* MeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
+		E641561C1B8AFF29005550AF /* apple-icon-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-57x57.png"; sourceTree = "<group>"; };
+		E641561D1B8AFF29005550AF /* apple-icon-60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-60x60.png"; sourceTree = "<group>"; };
+		E641561E1B8AFF29005550AF /* apple-icon-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-72x72.png"; sourceTree = "<group>"; };
+		E641561F1B8AFF29005550AF /* apple-icon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-76x76.png"; sourceTree = "<group>"; };
+		E64156201B8AFF29005550AF /* apple-icon-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-114x114.png"; sourceTree = "<group>"; };
+		E64156211B8AFF29005550AF /* apple-icon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-120x120.png"; sourceTree = "<group>"; };
+		E64156221B8AFF29005550AF /* apple-icon-144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-144x144.png"; sourceTree = "<group>"; };
+		E64156231B8AFF29005550AF /* apple-icon-152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-152x152.png"; sourceTree = "<group>"; };
+		E64156241B8AFF29005550AF /* apple-icon-180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-icon-180x180.png"; sourceTree = "<group>"; };
+		E641562E1B8B09DB005550AF /* createNewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createNewContactViewController.swift; sourceTree = "<group>"; };
 		E6AE96261B849BB300967734 /* ContactListGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListGroupTableViewController.swift; sourceTree = "<group>"; };
 		E6B919821B7EE2240008E114 /* ContactListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTableViewController.swift; sourceTree = "<group>"; };
 		E6B919841B7EE2360008E114 /* RemindListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindListTableViewController.swift; sourceTree = "<group>"; };
@@ -128,19 +152,22 @@
 			children = (
 				E6B919961B81D50A0008E114 /* MainMenuViewController.swift */,
 				E613E5E91B86DD4A00F970B4 /* Main.storyboard */,
+				E641562E1B8B09DB005550AF /* createNewContactViewController.swift */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				E613E5E71B86D0F800F970B4 /* createNewUserViewController.swift */,
-				E6AE96261B849BB300967734 /* ContactListGroupTableViewController.swift */,
 				E6B919981B81E0DF0008E114 /* AddNewReminderViewController.swift */,
 				E6B919821B7EE2240008E114 /* ContactListTableViewController.swift */,
 				E6B919841B7EE2360008E114 /* RemindListTableViewController.swift */,
 				E6B919861B7EE2480008E114 /* ToDoListTableViewController.swift */,
+				E6AE96261B849BB300967734 /* ContactListGroupTableViewController.swift */,
 				81BA81511A49DA1800E65899 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
 				E6B9199A1B81FFAA0008E114 /* Reminder.swift */,
 				E6B9199C1B8200640008E114 /* Contact.swift */,
 				E6B9199E1B8206830008E114 /* ReminderTableViewCell.swift */,
+				E64155E81B88C097005550AF /* ContactListTableViewCell.swift */,
+				E64155EA1B88D517005550AF /* MeTableViewCell.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -148,6 +175,15 @@
 		81BA81481A49DA1800E65899 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E641561C1B8AFF29005550AF /* apple-icon-57x57.png */,
+				E641561D1B8AFF29005550AF /* apple-icon-60x60.png */,
+				E641561E1B8AFF29005550AF /* apple-icon-72x72.png */,
+				E641561F1B8AFF29005550AF /* apple-icon-76x76.png */,
+				E64156201B8AFF29005550AF /* apple-icon-114x114.png */,
+				E64156211B8AFF29005550AF /* apple-icon-120x120.png */,
+				E64156221B8AFF29005550AF /* apple-icon-144x144.png */,
+				E64156231B8AFF29005550AF /* apple-icon-152x152.png */,
+				E64156241B8AFF29005550AF /* apple-icon-180x180.png */,
 				81BA81491A49DA1800E65899 /* Info.plist */,
 				81BA81821A49E27F00E65899 /* ParseStarterProject-Bridging-Header.h */,
 				E6DD1DD31B857C250060E027 /* Bridging-Header.h */,
@@ -241,7 +277,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E641562C1B8AFF29005550AF /* apple-icon-152x152.png in Resources */,
+				E64156281B8AFF29005550AF /* apple-icon-76x76.png in Resources */,
+				E64156261B8AFF29005550AF /* apple-icon-60x60.png in Resources */,
+				E64156251B8AFF29005550AF /* apple-icon-57x57.png in Resources */,
+				E64156291B8AFF29005550AF /* apple-icon-114x114.png in Resources */,
+				E641562B1B8AFF29005550AF /* apple-icon-144x144.png in Resources */,
+				E641562A1B8AFF29005550AF /* apple-icon-120x120.png in Resources */,
+				E64156271B8AFF29005550AF /* apple-icon-72x72.png in Resources */,
 				81BA81521A49DA1800E65899 /* Images.xcassets in Resources */,
+				E641562D1B8AFF29005550AF /* apple-icon-180x180.png in Resources */,
 				E613E5EB1B86DD4A00F970B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,11 +316,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6B9199D1B8200640008E114 /* Contact.swift in Sources */,
+				E641562F1B8B09DB005550AF /* createNewContactViewController.swift in Sources */,
 				E6B919971B81D50A0008E114 /* MainMenuViewController.swift in Sources */,
 				E6B919851B7EE2360008E114 /* RemindListTableViewController.swift in Sources */,
 				E6B919A71B821B030008E114 /* MGSwipeButton.h in Sources */,
 				E6B919A81B821B030008E114 /* MGSwipeButton.m in Sources */,
+				E64155E91B88C097005550AF /* ContactListTableViewCell.swift in Sources */,
 				E6B919A91B821B030008E114 /* MGSwipeTableCell.h in Sources */,
+				E64155EB1B88D517005550AF /* MeTableViewCell.swift in Sources */,
 				E6B919AA1B821B030008E114 /* MGSwipeTableCell.m in Sources */,
 				E613E5E81B86D0F800F970B4 /* createNewUserViewController.swift in Sources */,
 				E6AE96271B849BB300967734 /* ContactListGroupTableViewController.swift in Sources */,

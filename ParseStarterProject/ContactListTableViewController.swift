@@ -13,12 +13,38 @@ import Parse
 
 class ContactListTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
+    
+    var friendList: NSMutableArray = []
     let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
     var addressBook: ABAddressBookRef?
     var contactList: NSArray = []
     var parseIdentifierArray:NSMutableArray = NSMutableArray()
     var filteredContact = [ABRecordRef]()
     var addresBookIdentifierArray: NSMutableArray = NSMutableArray()
+    var fromWho = ""
+    var selfIdentifier = ""
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        var query = PFQuery(className: "Person")
+        //query.orderByAscending("dueAt")
+        
+        //query.whereKey("recipients", containsAllObjectsInArray: ["+85212345678"])
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if (error == nil) {
+                self.friendList.removeAllObjects()
+                
+                if let objects = objects as? [PFObject] {
+                    self.friendList.addObjectsFromArray(objects)
+                    
+                }
+                
+            }
+            self.tableView.reloadData()
+        }
+    }
+
     
     
   /*  func filterContentForSearchText(searchText: String) {
@@ -46,7 +72,7 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var query = PFQuery(className: "Person")
+       var query = PFQuery(className: "Person")
 //        query.whereKey("identifier", containsAllObjectsInArray: ["+85212345678"])
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if (error == nil) {
@@ -58,6 +84,7 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
             }
         }
         test()
+        
     }
     
     func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
@@ -95,7 +122,7 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
         addressBook = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
         self.contactList = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
         self.tableView.reloadData()
-        println("records in the array \(self.contactList.count)")
+        //println("records in the array \(self.contactList.count)")
         
         for record:ABRecordRef in contactList {
             var contactPerson: ABRecordRef = record
@@ -111,17 +138,19 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
 
             let phoneProperty: ABMultiValueRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty).takeRetainedValue() as ABMultiValueRef
             let allPhoneIDs: NSArray = ABMultiValueCopyArrayOfAllValues(phoneProperty).takeUnretainedValue() as NSArray
-            println ("contactName \(contactName)")
+           // println ("contactName \(contactName)")
             for phone in allPhoneIDs {
                 let phoneID = phone as! String
-                println ("contactPhone : \(phoneID) :=>")
+                //println ("contactPhone : \(phoneID) :=>")
                 var newPhoneID = phoneID.stringByReplacingOccurrencesOfString("(", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
                     newPhoneID = newPhoneID.stringByReplacingOccurrencesOfString(")", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
                     newPhoneID = newPhoneID.stringByReplacingOccurrencesOfString(" ", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
                     newPhoneID = newPhoneID.stringByReplacingOccurrencesOfString("-", withString: "", options:NSStringCompareOptions.LiteralSearch, range: nil)
                     self.addresBookIdentifierArray.addObject(newPhoneID)
-                println ("contactPhone : \(newPhoneID) :=>")
+                //println ("contactPhone : \(newPhoneID) :=>")
             }
+            
+            
         }
     }
     
@@ -156,63 +185,74 @@ class ContactListTableViewController: UITableViewController, UISearchBarDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.contactList.count;
+        return self.friendList.count;
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
+        let cell:ContactListTableViewCell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! ContactListTableViewCell
+        
+        var texta = friendList[indexPath.row]["firstName"] as? String
+        var textb = friendList[indexPath.row]["lastName"] as? String
+        
+        if let text = "\(texta!) \(textb!)" as? String {
+            cell.personName.adjustsFontSizeToFitWidth = true
+            cell.personName.font = UIFont.systemFontOfSize(14.0)
+            cell.personName.numberOfLines = 1
+            cell.personName.text = text
+            
+            }
+        
+        
+        
+        
+        
+        
+        
+        
+       /*
         var contactPerson:ABRecordRef = self.contactList[indexPath.row];
         var contactName: String = ABRecordCopyCompositeName(contactPerson).takeRetainedValue() as String
-
-        cell.textLabel!.text = contactName
-
+        
+        var thumbnailData = ABPersonCopyImageData(contactPerson).takeRetainedValue() as NSData
+        if let pic = UIImage(data: thumbnailData) {
+            cell.profilePic.image = pic
+        }
+        */
+        //cell.personName!.text = contactName
+        
         return cell
+        
+        
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    
+    @IBAction func pushButton(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("push", sender: self)
+        
     }
-    */
+    
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+        var destinationVC = segue.destinationViewController as! AddNewReminderViewController
+    
+        if let indexPath = self.tableView.indexPathForSelectedRow(){
+            destinationVC.toWho = friendList[indexPath.row]["identifier"] as! String
+            destinationVC.selfIdentifier = self.selfIdentifier
+            
+        }
     }
-    */
+    
+    
+    @IBAction func meButton(sender: AnyObject) {
+        
+        
+    }
 
+   
 }

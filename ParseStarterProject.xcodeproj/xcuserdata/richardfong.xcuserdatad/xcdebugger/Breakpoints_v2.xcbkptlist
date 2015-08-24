@@ -9,123 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ParseStarterProject/createNewUserViewController.swift"
-            timestampString = "461846574.307285"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "signUpSuccess(_:Lastname:Phonenumber:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParseStarterProject.createNewUserViewController.firstName.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
-                  moduleName = "ParseStarterProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/richardfong/Desktop/Final%20Project/ParseSwiftStarterProject/ParseStarterProject/createNewUserViewController.swift"
-                  timestampString = "461845869.499151"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParseStarterProject.createNewUserViewController.firstName.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
-                  moduleName = "ParseStarterProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/richardfong/Desktop/Final%20Project/ParseSwiftStarterProject/ParseStarterProject/createNewUserViewController.swift"
-                  timestampString = "461845869.500046"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParseStarterProject.createNewUserViewController.firstName.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
-                  moduleName = "ParseStarterProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/richardfong/Desktop/Final%20Project/ParseSwiftStarterProject/ParseStarterProject/createNewUserViewController.swift"
-                  timestampString = "461845869.500164"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParseStarterProject.createNewUserViewController.init (ParseStarterProject.createNewUserViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; ParseStarterProject.createNewUserViewController"
-                  moduleName = "ParseStarterProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/richardfong/Desktop/Final%20Project/ParseSwiftStarterProject/ParseStarterProject/createNewUserViewController.swift"
-                  timestampString = "461845869.500259"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "261">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParseStarterProject.createNewUserViewController.init (ParseStarterProject.createNewUserViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; ParseStarterProject.createNewUserViewController"
-                  moduleName = "ParseStarterProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/richardfong/Desktop/Final%20Project/ParseSwiftStarterProject/ParseStarterProject/createNewUserViewController.swift"
-                  timestampString = "461845869.500352"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "173">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ParseStarterProject/ContactListTableViewController.swift"
-            timestampString = "461909240.026141"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ParseStarterProject/ViewController.swift"
-            timestampString = "461922430.720872"
+            timestampString = "462093002.273925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "198"
+            endingLineNumber = "198">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

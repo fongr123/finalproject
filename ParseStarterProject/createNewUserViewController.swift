@@ -14,6 +14,7 @@ class createNewUserViewController: UIViewController {
     
     var person = PFObject (className: "Person")
     var reminder = PFObject (className: "Reminder")
+    var selfIdentifier = ""
     
     
     
@@ -44,7 +45,15 @@ class createNewUserViewController: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "signUpSuccess" {
+            if (signUpSuccess(firstName.text, Lastname: lastName.text, Phonenumber: phoneNumber.text) == true) {
+                    var destinationVC = segue.destinationViewController as! MainMenuViewController
+                    destinationVC.selfIdentifier = self.selfIdentifier
+            }
+        }
+    }
     
     
     
@@ -108,6 +117,7 @@ class createNewUserViewController: UIViewController {
             person["identifier"] = phoneNumber.text
             person["lastName"] = lastName.text
             person["isRegistered"] = true
+            selfIdentifier = phoneNumber.text
             person.saveInBackground()
             
             
@@ -121,8 +131,9 @@ class createNewUserViewController: UIViewController {
             
             NSUserDefaults.standardUserDefaults().setObject(phoneNumber.text, forKey: "kLoggedInUserIdentifier")
             
-            self.dismissViewControllerAnimated(true, completion: {})
-            //self.performSegueWithIdentifier("signUpSuccess", sender: self)
+            
+            //self.dismissViewControllerAnimated(true, completion: {})
+            self.performSegueWithIdentifier("signUpSuccess", sender: self)
         }
         
         else {

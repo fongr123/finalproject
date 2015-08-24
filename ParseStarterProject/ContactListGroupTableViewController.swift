@@ -9,6 +9,7 @@
 import UIKit
 import AddressBook
 import AddressBookUI
+import Parse
 
 class ContactListGroupTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
@@ -20,6 +21,7 @@ class ContactListGroupTableViewController: UITableViewController, UISearchBarDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        test()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -134,6 +136,9 @@ class ContactListGroupTableViewController: UITableViewController, UISearchBarDel
         
         return cell
     }
+    
+   
+    
 
 
     /*

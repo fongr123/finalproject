@@ -32,7 +32,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 
             }
+            
         }
+        
+        let stringKey = NSUserDefaults.standardUserDefaults()
+        userID.text = stringKey.stringForKey("kLoggedInUserIdentifier")
             
             
         
@@ -107,7 +111,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
             }
         }
-        NSUserDefaults.standardUserDefaults().objectForKey("kLoggedInUserIdentifier")
+       
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
@@ -147,16 +151,18 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBAction func SignInbutton(sender: AnyObject) {
         
         if parseIdentifierArray.containsObject(userID.text) {
-            senderIdentifier = userID.text
+            
             NSUserDefaults.standardUserDefaults().setObject(userID.text, forKey: "kLoggedInUserIdentifier")
+            NSUserDefaults.standardUserDefaults().synchronize()
             
             
             
             //NSUserDefaults.standardUserDefaults().removeObjectForKey("kLoggedInUserIdentifier")
-            //self.performSegueWithIdentifier("goToMainMenuViewController", sender: self)
+            //self.performSegueWithIdentifier("loginSegue", sender: self)
             
             
             self.dismissViewControllerAnimated(true, completion: {})
+        
         } else {
             var alert = UIAlertView()
             alert.title = "Error"
@@ -166,9 +172,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
         }
     }
-        
-
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "loginSegue" {
+            var destinationVC = segue.destinationViewController as! MainMenuViewController
+            destinationVC.selfIdentifier = userID.text
+        }
+        
+    }
         
         
     // Do any additional setup after loading the view, typically from a nib.

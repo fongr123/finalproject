@@ -10,11 +10,17 @@ import UIKit
 import Parse
 
 class AddNewReminderViewController: UIViewController, UITextFieldDelegate {
+    
+    var selfIdentifier = ""
+    var toWho = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.reminderText.delegate = self;
+
+        
 
         // Do any additional setup after loading the view.
     }
@@ -49,13 +55,14 @@ class AddNewReminderViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func scheduleReminderButton(sender: AnyObject) {
         
-        if (reminderText.text != nil) {
+        if (reminderText.text != "") {
         
         var dueDate:NSDate = self.dueDatePicker.date
         var remindeer = PFObject(className: "Reminder")
         remindeer["dueAt"] = self.dueDatePicker.date
         remindeer["text"] = reminderText.text
-        remindeer["recipients"] = ["+85212345678","+85287654321"]
+        remindeer["recipients"] = [toWho]
+        remindeer["fromWho"] = [selfIdentifier]
         remindeer.saveInBackground()
         
         let alert = UIAlertView()
@@ -71,16 +78,26 @@ class AddNewReminderViewController: UIViewController, UITextFieldDelegate {
             
             let alert = UIAlertView()
             alert.title = "Error"
-            alert.message = "No reminder field is empty"
+            alert.message = "Reminder field is empty"
             alert.addButtonWithTitle("Ok")
             alert.show()
     
         }
+        
+    
 
         
         
         //self.performSegueWithIdentifier("goToMainMenuViewController", sender: self)
         
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "returnToMainMenu" {
+            var destinationVC = segue.destinationViewController as! MainMenuViewController
+            destinationVC.selfIdentifier = self.selfIdentifier
+        }
     }
 
    /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
